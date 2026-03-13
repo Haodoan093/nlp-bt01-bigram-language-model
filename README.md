@@ -51,6 +51,13 @@ jupyter notebook BT01_Bigram_Language_Model.ipynb
 
 > ⚠️ Cell tải Wikipedia mất khoảng **2–3 phút**.
 
+### Dùng file input/output
+
+- `input.txt`: chứa câu cần tính xác suất (một dòng).
+- `output.txt`: notebook sẽ ghi kết quả xác suất/perplexity sau khi chạy cell ở Mục 4.
+
+Bạn có thể thay nội dung `input.txt` bằng câu bất kỳ, rồi chạy lại notebook để cập nhật `output.txt`.
+
 ---
 
 ## Kiến trúc mô hình

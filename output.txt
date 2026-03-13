@@ -1,0 +1,92 @@
+BT01 - BIGRAM LANGUAGE MODEL REPORT
+================================================================================
+
+[1] MODEL SUMMARY
+--------------------------------------------------------------------------------
+Số câu sau tiền xử lý: 3,996
+Kích thước từ vựng (V): 5,633
+Tổng token: 71,606
+Số bigram khác nhau: 33,310
+
+[2] SENTENCE PROBABILITY (FROM input.txt)
+--------------------------------------------------------------------------------
+Câu: "Hôm nay trời đẹp lắm"
+
+P(hôm        | <s>         ) = 0.00010385
+P(nay        | hôm         ) = 0.00017737
+P(trời       | nay         ) = 0.00017693
+P(đẹp        | trời        ) = 0.00017740
+P(lắm        | đẹp         ) = 0.00017721
+P(</s>       | lắm         ) = 0.00017749
+
+Xác suất câu  P(s)     = 1.818514e-23
+Log xác suất  log P(s) = -52.3614
+Perplexity             = 6166.6205
+
+[3] MULTI-SENTENCE EVALUATION
+--------------------------------------------------------------------------------
+Câu                                                    log P(s)   Perplexity
+Hôm nay trời đẹp lắm                                   -52.3614    6166.6205
+Việt Nam là một đất nước xinh đẹp                      -64.0991    1239.0818
+Tôi đang học xử lý ngôn ngữ tự nhiên                   -74.5546    1729.2812
+Hà Nội là thủ đô của Việt Nam                          -66.6862    1651.7312
+Mô hình ngôn ngữ rất hữu ích                           -61.3048    2128.3468
+
+[4] GENERATED SENTENCES
+--------------------------------------------------------------------------------
+Random [1]: pandanus columnaris tại wikispecies
+Random [2]: the grand est ở hồi hải đảo theo đó an nam
+Random [3]: nhà đầu tiên của avicii được phát thanh kiếm sống
+Random [4]: trentepohlia petulans tại châu thành hình thức am hiểu bởi ferdinand sau họ vào năm
+Random [5]: để tìm ra ở trên bảng xếp hạng nặng nhưng cuối năm 2021
+Seed "hôm": hôm qua đó
+Seed "việt": việt thông qua itunes và herzegovina cho nhiều trong sự tổng hợp thông cáo một xã
+Seed "tôi": tôi có phải ngạc nhiên liệu liên kết ngoài
+Seed "hà": hà nội dung khác
+Seed "mô": mô tả khoa học không xác định được đặt đề cử guiche và là glutamate nhiều
+HighTemp [1]: morton mô hình thành đến chiết cành hay là lớp tàu ostland
+HighTemp [2]: qua hoạt hóa tiểu đơn như tuyết và 10x cũng đã có
+HighTemp [3]: phục qua địa trung gian tới door to you make me down
+HighTemp [4]: tại nhật
+HighTemp [5]: chú mình mang chức thái nước biển hải âu
+
+[5] TOP 20 BIGRAMS
+--------------------------------------------------------------------------------
+là một                              283   P=0.043352
+liên quan                           205   P=0.034506
+liệu liên                           179   P=0.030790
+quan tới                            178   P=0.030084
+tham khảo                           132   P=0.022947
+chú thích                           130   P=0.022668
+một loài                            116   P=0.018454
+phát hành                           114   P=0.019756
+liên kết                            112   P=0.018928
+đầu tiên                            110   P=0.018984
+dữ liệu                             107   P=0.018806
+trong họ                            107   P=0.017358
+tại wikispecies                     106   P=0.017857
+quá trình                           105   P=0.018428
+khoa học                            104   P=0.018255
+kết ngoài                           102   P=0.017740
+pháp luật                            99   P=0.017164
+này được                             98   P=0.016517
+có thể                               92   P=0.015024
+loài này                             91   P=0.015657
+
+[6] TOP 15 UNIGRAMS
+--------------------------------------------------------------------------------
+và                      1,050
+của                       923
+là                        918
+được                      823
+một                       707
+các                       599
+trong                     589
+có                        557
+năm                       522
+ở                         375
+cho                       365
+này                       361
+tại                       359
+với                       352
+liên                      337
