@@ -2,12 +2,16 @@ from __future__ import annotations
 
 from collections import defaultdict
 from dataclasses import dataclass
+from pathlib import Path
 from statistics import mean
 from typing import Iterable
 
 import nltk
 from nltk.corpus import brown
 from nltk.tag import BigramTagger, DefaultTagger, UnigramTagger
+
+
+LOCAL_NLTK_DIR = Path(__file__).resolve().parent / "nltk_data"
 
 
 @dataclass
@@ -18,8 +22,14 @@ class Metrics:
 
 
 def ensure_nltk_resources() -> None:
-    nltk.download("brown", quiet=True)
-    nltk.download("universal_tagset", quiet=True)
+    LOCAL_NLTK_DIR.mkdir(parents=True, exist_ok=True)
+    local_data_path = str(LOCAL_NLTK_DIR)
+
+    if local_data_path not in nltk.data.path:
+        nltk.data.path.insert(0, local_data_path)
+
+    nltk.download("brown", download_dir=local_data_path, quiet=True)
+    nltk.download("universal_tagset", download_dir=local_data_path, quiet=True)
 
 
 def split_train_test(tagged_sents: list[list[tuple[str, str]]], train_ratio: float = 0.8):
