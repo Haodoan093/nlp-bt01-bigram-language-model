@@ -1,14 +1,14 @@
-BT02 - Danh gia 2 bo POS tagger tren Brown corpus
-Ngay chay: 2026-03-14
+BT02 - Evaluation of Two POS Taggers on the Brown Corpus
+Run date: 2026-03-14
 
-Du lieu:
+Dataset:
 - Corpus: Brown (NLTK)
 - Tagset: universal
-- Train/Test: 80/20
-- So cau train: 45872
-- So cau test: 11468
+- Train/Test split: 80/20
+- Number of training sentences: 45,872
+- Number of test sentences: 11,468
 
-Ket qua:
+Results:
 1) UnigramTagger
    - Precision (macro): 0.8973
    - Recall (macro):    0.8646
@@ -21,6 +21,6 @@ Ket qua:
    - Macro-F1:          0.8693
    - Accuracy:          0.9455
 
-Ket luan:
-- BigramTagger tot hon UnigramTagger tren tat ca cac do do.
-- Nguyen nhan: Bigram su dung them ngu canh nen gan nhan on dinh hon.
+Conclusion:
+- BigramTagger performs better than UnigramTagger on all reported metrics.
+- Reason: BigramTagger uses additional context from previous tokens, leading to more stable POS tagging.
