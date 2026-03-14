@@ -1,0 +1,26 @@
+BT02 - Danh gia 2 bo POS tagger tren Brown corpus
+Ngay chay: 2026-03-14
+
+Du lieu:
+- Corpus: Brown (NLTK)
+- Tagset: universal
+- Train/Test: 80/20
+- So cau train: 45872
+- So cau test: 11468
+
+Ket qua:
+1) UnigramTagger
+   - Precision (macro): 0.8973
+   - Recall (macro):    0.8646
+   - Macro-F1:          0.8660
+   - Accuracy:          0.9366
+
+2) BigramTagger
+   - Precision (macro): 0.9018
+   - Recall (macro):    0.8686
+   - Macro-F1:          0.8693
+   - Accuracy:          0.9455
+
+Ket luan:
+- BigramTagger tot hon UnigramTagger tren tat ca cac do do.
+- Nguyen nhan: Bigram su dung them ngu canh nen gan nhan on dinh hon.
