@@ -7,30 +7,26 @@ Su dung NLTK de tai va doc Brown corpus voi bo nhan universal:
 - Tap du lieu: `brown.tagged_sents(tagset="universal")`
 
 ## 2) Gan nhan tu loai bang 2 bo tagger
-Thuc hien tren Brown corpus voi chia tap:
-
-- Train: 80% cau dau
-- Test: 20% cau cuoi
+Theo yeu cau sua lai, Brown chi dung de test (khong chia train/test tu Brown).
 
 Hai bo tagger da danh gia:
 
-1. UnigramTagger + backoff DefaultTagger("NOUN")
-2. BigramTagger + backoff UnigramTagger + DefaultTagger("NOUN")
+1. PerceptronTagger pretrained cua NLTK (gan nhan Penn Treebank, sau do map sang universal)
+2. BigramTagger train tren Treebank + backoff UnigramTagger + DefaultTagger("NOUN")
 
 Script thuc hien: bt2/bt02_pos_tagger_evaluation.py
 
 ## 3) Danh gia do chinh xac (precision, recall, macro-F1)
 Ket qua chay thuc te (ngay 2026-03-14):
 
-- So cau train: 45,872
-- So cau test: 11,468
+- So cau test (Brown): 57,340
 
 ### Tong hop ket qua
 
 | Tagger | Precision (macro) | Recall (macro) | Macro-F1 | Accuracy |
 |---|---:|---:|---:|---:|
-| UnigramTagger | 0.8973 | 0.8646 | 0.8660 | 0.9366 |
-| BigramTagger | 0.9018 | 0.8686 | 0.8693 | 0.9455 |
+| PerceptronTagger (pretrained) | 0.8241 | 0.8237 | 0.8205 | 0.9184 |
+| BigramTagger (train Treebank) | 0.8003 | 0.7532 | 0.7688 | 0.8606 |
 
 ## Giai thich cac do do
 
@@ -43,6 +39,5 @@ Vi Brown corpus co nhieu nhan khong can bang tan suat, macro-F1 la do do hop ly 
 
 ## Nhan xet
 
-- BigramTagger tot hon UnigramTagger tren ca 3 do do macro va accuracy.
-- Ly do: BigramTagger khai thac them ngu canh tu truoc do, nen giam nham lan trong cac truong hop mot tu co nhieu kha nang tu loai.
-- Chenh lech khong qua lon vi backoff Unigram da manh, nhung Bigram van tao cai thien on dinh.
+- Brown duoc dung dung vai tro test set, khong dung de huan luyen.
+- Trong thiet lap nay, PerceptronTagger pretrained cho ket qua tot hon BigramTagger train tu Treebank tren tat ca cac chi so.

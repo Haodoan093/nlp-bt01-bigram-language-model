@@ -4,23 +4,22 @@ Run date: 2026-03-14
 Dataset:
 - Corpus: Brown (NLTK)
 - Tagset: universal
-- Train/Test split: 80/20
-- Number of training sentences: 45,872
-- Number of test sentences: 11,468
+- Evaluation setup: Brown is used only as the test set
+- Number of test sentences: 57,340
 
 Results:
-1) UnigramTagger
-   - Precision (macro): 0.8973
-   - Recall (macro):    0.8646
-   - Macro-F1:          0.8660
-   - Accuracy:          0.9366
+1) PerceptronTagger (pretrained)
+   - Precision (macro): 0.8241
+   - Recall (macro):    0.8237
+   - Macro-F1:          0.8205
+   - Accuracy:          0.9184
 
-2) BigramTagger
-   - Precision (macro): 0.9018
-   - Recall (macro):    0.8686
-   - Macro-F1:          0.8693
-   - Accuracy:          0.9455
+2) BigramTagger (trained on Treebank)
+   - Precision (macro): 0.8003
+   - Recall (macro):    0.7532
+   - Macro-F1:          0.7688
+   - Accuracy:          0.8606
 
 Conclusion:
-- BigramTagger performs better than UnigramTagger on all reported metrics.
-- Reason: BigramTagger uses additional context from previous tokens, leading to more stable POS tagging.
+- Brown was not used for training, only for testing.
+- In this setup, the pretrained PerceptronTagger outperforms BigramTagger trained on Treebank.
